@@ -1,7 +1,6 @@
 # IT4Bio – Information Technology for Biologists
-Lecture notes, scripts, and examples for IT4Bio: R programming basics, data analysis, computational tools, and IT foundations tailored for students in biology and biotechnology.
+### Lecture notes, scripts, examples, and teaching materials for IT4Bio — an introduction to R programming, data analysis, computational tools, and IT foundations for biology and biotechnology students.
 
-Teaching materials for courses on information technologies for biology and biotechnology students.  
 The repository is continuously updated and contains:
 
 - Introductory R programming (RGui, RStudio, clean code, data structures)
