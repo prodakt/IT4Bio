@@ -11,3 +11,5 @@ The repository is continuously updated and contains:
 - Using AI tools (ChatGPT, AI Studio, Colab) to support R programming and reproducible analyses
 
 Materials are available in multiple languages (`pl`, `en`, `it`) in the subdirectories of each module.
+
+For more details, see the full contents here: [IT4Bio – contents.md](https://github.com/prodakt/IT4Bio/blob/main/contents.md)
