@@ -1,13 +1,9 @@
 # IT4Bio – Table of Contents / Spis treści / Indice del corso
 
-**Jump to language version:**  
-👉 [🇬🇧 English](#-it4bio--course-contents-en)  
-👉 [🇵🇱 Polski](#-it4bio--spis-treści-kursu-pl)  
-👉 [🇮🇹 Italiano](#-it4bio--indice-del-corso-it)
-
-
-
-# 🇬🇧 IT4Bio – Course Contents (EN)
+<details>
+<summary>
+  <h3>Course Contents (🇬🇧)</h3>
+</summary>
 
 ## Module 1 — Practical Basics of R
 - RGui and RStudio environment
@@ -71,9 +67,13 @@
 - Automating pipelines in Python
 - (Extension) Python for R Users
 
+</details>
 
 
-# 🇵🇱 IT4Bio – Spis treści kursu (PL)
+<details>
+<summary>
+  <h3>Spis treści kursu (🇵🇱)</h3>
+</summary>
 
 ## Moduł 1 — Praktyczne podstawy R
 - RGui i RStudio
@@ -137,9 +137,13 @@
 - Automatyzacja pipeline’ów
 - (Rozszerzenie) Python dla użytkowników R
 
+</details>
 
 
-# 🇮🇹 IT4Bio – Indice del corso (IT)
+<details>
+<summary>
+  <h3>Indice del corso (🇮🇹)</h3>
+</summary>
 
 ## Modulo 1 — Basi pratiche di R
 - Ambiente RGui e RStudio
