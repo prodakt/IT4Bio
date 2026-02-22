@@ -2,7 +2,7 @@
 
 <details>
 <summary>
-  <h3>Course Contents (🇬🇧)</h3>
+  <h3>Course Contents 🇬🇧</h3>
 </summary>
 
 ## Module 1 — Practical Basics of R
@@ -72,7 +72,7 @@
 
 <details>
 <summary>
-  <h3>Spis treści kursu (🇵🇱)</h3>
+  <h3>Spis treści kursu 🇵🇱</h3>
 </summary>
 
 ## Moduł 1 — Praktyczne podstawy R
@@ -142,7 +142,7 @@
 
 <details>
 <summary>
-  <h3>Indice del corso (🇮🇹)</h3>
+  <h3>Indice del corso 🇮🇹</h3>
 </summary>
 
 ## Modulo 1 — Basi pratiche di R
