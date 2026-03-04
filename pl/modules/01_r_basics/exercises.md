@@ -19,7 +19,7 @@
 ## Ćwiczenie 3 — Operacje na `data.frame`
 Na prostym `data.frame`:
 - wybierz 2 kolumny,
-- przefiltruj wiersze po warunku,
+- przefiltruj wiersze po warunku z danej kolumny, tzn. zrób operację "wybierz te rzędy, które w koumnie (nazwa lub numer) są większe lub mniejsze lub równe jakiejś wartości" (np. wybierz tylko te myszy, które są większe, niż 23g),
 - policz podstawowe statystyki dla jednej kolumny,
 - zrób prostą tabelę częstości (np. `table()`).
 
