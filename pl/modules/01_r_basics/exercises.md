@@ -19,7 +19,7 @@
 ## Ćwiczenie 3 — Operacje na `data.frame`
 Na prostym `data.frame`:
 - wybierz 2 kolumny,
-- przefiltruj wiersze po warunku z danej kolumny, tzn. zrób operację "wybierz te rzędy, które w koumnie (nazwa lub numer) są większe lub mniejsze lub równe jakiejś wartości" (np. wybierz tylko te myszy, które są większe, niż 23g),
+- przefiltruj wiersze po warunku z danej kolumny, tzn. zrób operację "wybierz te rzędy, które w kolumnie (nazwa lub numer) są większe lub mniejsze lub równe jakiejś wartości" (np. wybierz tylko te myszy, które są większe, niż 23g),
 - policz podstawowe statystyki dla jednej kolumny,
 - zrób prostą tabelę częstości (np. `table()`).
 
@@ -157,4 +157,236 @@ Skrypt jest traktowany jako indywidualna dokumentacja pracy z całego kursu.
   2) wykonanie 3 transformacje danych,
   3) wygenerowanie 2 wykresów,
   4) zapisanie wykresów do plików,
-  5) na końcu wypisać krótkie podsumowanie (np. liczba wierszy, średnie, min/max).
+  5) wypisać krótkie podsumowanie (np. liczba wierszy, średnie, min/max),
+  6) wykonać zadanie na zaliczenie tego etapu:
+
+Zadanie na zaliczenie:
+# Zadanie końcowe po ćwiczeniu 1: Twoja tabela do dalszych ćwiczeń (warianty zależne od numeru indeksu)
+
+**Cel zadania:** każdy student generuje **własny, unikalny** zestaw danych (tabelę), wykonuje na nim podstawowe operacje (statystyki, wykres, zapis/odczyt), a następnie korzysta z tej tabeli w kolejnych ćwiczeniach.
+
+---
+
+## 0) Zasady ogólne (obowiązują wszystkich)
+
+1. Pracujesz w swoim projekcie RStudio (R Project) - opcjonalnie.
+2. Wyniki zapisujesz w swoim skrypcie semestralnym:  
+   **`IT4Bio_nrIndeksu_AB.R`**
+3. Na potrzeby tego zadania utwórz (lub uzupełnij) sekcję w skrypcie:
+   - `# Zadanie końcowe — tabela (A lub B)`
+4. Na końcu zadania musisz mieć:
+   - utworzoną tabelę danych (`rozklady` albo `geny`) w R,
+   - plik zapisany na dysku (`TabRozklady.csv` lub `TabGeny.csv`),
+   - wczytaną kopię tabeli do nowej zmiennej (`rozklady2` albo `geny2`),
+   - co najmniej 1 wykres (zależny od wersji .1 / .2).
+
+---
+
+## 1) Jak wyznaczyć swój wariant z numeru indeksu
+
+Weź swój numer indeksu i zapisz go jako ciąg cyfr.
+
+### 1.1. Oznaczenia cyfr
+- **d₁** — ostatnia cyfra indeksu (np. 123456**7** → d₁ = 7)
+- **d₂** — przedostatnia cyfra indeksu (np. 12345**6**7 → d₂ = 6)
+- **N** — ostatnie 4 cyfry indeksu jako liczba (np. 123**4567** → N = 4567)
+
+### 1.2. Liczba wierszy w tabeli (dotyczy A i B)
+Ustal liczbę wierszy `n` w tabeli:
+- jeśli `N < 1000`, to **ustaw n = N + 1000**
+- jeśli `N ≥ 1000`, to **ustaw n = N**
+
+✅ Przykład:  
+- indeks …0873 → N=873 → n=1873  
+- indeks …4567 → N=4567 → n=4567
+
+### 1.3. Liczba prób (A) lub liczba chromosomów (B)
+Wylicz:
+- `k = (d₂ %% 4) + 3`
+
+To daje zawsze `k` w zakresie **3–6**.
+
+Interpretacja:
+- w **wariancie A**: `k` = liczba prób / grup w kolumnie `SampleNames`
+- w **wariancie B**: `k` = liczba chromosomów (Chromosomes 1..k)
+
+✅ Przykład:
+- jeśli d₂=6 → 6 %% 4 = 2 → k = 2 + 3 = 5
+
+### 1.4. Wariant danych: A lub B
+- jeśli **d₁ jest w zakresie 0–4** → robisz **wariant A (rozklady)**
+- jeśli **d₁ jest w zakresie 5–9** → robisz **wariant B (geny)**
+
+### 1.5. Wersja zadań: .1 lub .2 (dotyczy A i B)
+Znajdź **pierwszą cyfrę indeksu różną od 0** (czyli pierwszą „niezerową” cyfrę od lewej). Nazwij ją `p`.
+
+- jeśli `p` jest **parzysta** → robisz wersję **.1**
+- jeśli `p` jest **nieparzysta** → robisz wersję **.2**
+
+✅ Przykład:
+- indeks 0012345 → pierwsza niezerowa cyfra p=1 → nieparzysta → wersja .2  
+- indeks 0203456 → p=2 → parzysta → wersja .1
+
+---
+
+# 2) WARIANT A — tabela `rozklady` (dla d₁ = 0–4)
+
+## 2.1. Wygeneruj tabelę `rozklady` o liczbie wierszy n
+Twoja tabela musi mieć **dokładnie n wierszy** i następujące kolumny:
+
+1) **`grupa`**  
+- wartości: 1 i 2 **naprzemiennie**  
+- typ danych: **factor** (WAŻNE!)
+
+2) **`lp`**  
+- liczby porządkowe od 1 do n  
+- typ: numeric lub integer
+
+3) **`rnorm`**  
+- wartości z rozkładu normalnego (liczby zmiennoprzecinkowe)
+
+4) **`losowe`**  
+- wartości całkowite losowe z przedziału **0–10**  
+- z powtórzeniami
+
+5) **`SampleNames`** (DODATEK OBOWIĄZKOWY)  
+- `k` grup próbek: `sample1 ... samplek`  
+- możesz rozdzielić próbki:
+  - po kolei (blokami),
+  - naprzemiennie,
+  - losowo (dowolnie),
+  ale muszą wystąpić wszystkie `sample1...samplek`.
+
+✅ Nazwa zmiennej tabelarycznej w R: **`rozklady`**.
+
+---
+
+## 2.2. Wykonaj operacje zależnie od wersji (.1 lub .2)
+
+### Wersja A.1 (jeśli p parzyste)
+1) Oblicz **średnią, minimalną i maksymalną** wartość w każdej kolumnie numerycznej:
+   - `lp`, `rnorm`, `losowe`
+2) Narysuj **prosty wykres punktowy** wartości `rnorm`:
+   - np. `plot(rozklady$rnorm)` albo `plot(rozklady$lp, rozklady$rnorm)`
+3) Zapisz tabelę do pliku na dysku:
+   - **`TabRozklady.csv`**
+
+### Wersja A.2 (jeśli p nieparzyste)
+1) Zapisz tabelę do pliku:
+   - **`TabRozklady.csv`**
+2) Wczytaj ją do nowej zmiennej:
+   - **`rozklady2`**
+3) Narysuj wykres punktowy zależności:
+   - `rnorm` vs `losowe`
+   - np. `plot(rozklady2$losowe, rozklady2$rnorm)`
+
+---
+
+## 2.3. Co oddajesz / co musi być w skrypcie (wariant A)
+W Twoim skrypcie muszą się znaleźć:
+- obliczenia wartości `n` i `k`,
+- tabela `rozklady`,
+- zapis pliku `TabRozklady.csv`,
+- (jeśli wersja .2) tabela `rozklady2` po wczytaniu,
+- wykres (zgodny z wersją).
+
+---
+
+# 3) WARIANT B — tabela `geny` (dla d₁ = 5–9)
+
+## 3.1. Wygeneruj tabelę `geny` o liczbie wierszy n
+Twoja tabela musi mieć **dokładnie n wierszy** i następujące kolumny:
+
+1) **`GeneID`**  
+- symbole/identyfikatory genów (tekst)  
+- np. `Gene_1`, `Gene_2`, … lub dowolny sensowny schemat
+
+2) **`Biotype`**  
+- typ genu (tekst / factor) losowany z listy:
+  - `protein_coding`, `lncRNA`, `tRNA`, `snRNA`, `rRNA`
+
+3) **`Length`**  
+- długość genu (liczba całkowita, np. 100–50000)
+
+4) **`Chromosome`**  
+- numer chromosomu od **1 do k**
+- gdzie `k = (d₂ %% 4) + 3`
+
+5) **`Location`**  
+- lokalizacja na chromosomie w formacie:  
+  **`START-END`**  
+- START i END mają być liczbami, a END > START  
+- (uwaga: to ma być lokalizacja *na chromosomie*, a nie „Chr:START-END” — numer chromosomu jest osobno w kolumnie `Chromosome`)
+
+6) **`Exons`**  
+- liczba egzonów (liczba całkowita, np. 1–20)
+
+7) **`Organism`**  
+- nazwa organizmu (tekst), np. losowana z:
+  - `Homo sapiens`, `Mus musculus`, `Bos taurus`, `Sus scrofa`  
+  (możesz użyć też innych, ale minimum 3 różne organizmy)
+
+✅ Nazwa zmiennej tabelarycznej w R: **`geny`**.
+
+---
+
+## 3.2. Wykonaj operacje zależnie od wersji (.1 lub .2)
+
+### Wersja B.1 (jeśli p parzyste)
+1) Oblicz **średnią, minimalną i maksymalną** wartość w kolumnach liczbowych:
+   - `Length`, `Chromosome`, `Exons`
+2) Narysuj prosty wykres punktowy (scatter plot) np.:
+   - `Length` vs `Exons`  
+   (oś X: Exons, oś Y: Length)
+3) Zapisz tabelę do pliku:
+   - **`TabGeny.csv`**
+
+### Wersja B.2 (jeśli p nieparzyste)
+1) Zapisz tabelę do pliku:
+   - **`TabGeny.csv`**
+2) Wczytaj ją do nowej zmiennej:
+   - **`geny2`**
+3) Narysuj wykres punktowy zależności:
+   - `Exons` vs `Length` (na danych z `geny2`)
+
+---
+
+## 3.3. Co oddajesz / co musi być w skrypcie (wariant B)
+W Twoim skrypcie muszą się znaleźć:
+- obliczenia wartości `n` i `k`,
+- tabela `geny`,
+- zapis pliku `TabGeny.csv`,
+- (jeśli wersja .2) tabela `geny2` po wczytaniu,
+- wykres (zgodny z wersją).
+
+---
+
+# 4) Wymagania techniczne i kontrola poprawności (dla wszystkich)
+
+1) **Zmienna tabelaryczna musi mieć dokładną nazwę:**
+- wariant A: `rozklady`
+- wariant B: `geny`
+
+2) **Liczba wierszy musi się zgadzać z Twoim `n`.**
+
+3) **Wariant A:** `grupa` musi być typu **factor**.
+
+4) Musisz umieć odpowiedzieć na pytania:
+- jak policzyłeś `n` i `k` z indeksu?
+- co oznacza `factor`?
+- czym różni się zapis CSV i odczyt CSV?
+- co przedstawia Twój wykres?
+
+---
+
+# 5) Uwaga: ta tabela wraca w kolejnych ćwiczeniach
+
+Zapisz plik `TabRozklady.csv` lub `TabGeny.csv` w folderze projektu.  
+Na kolejnych zajęciach będziesz:
+- filtrować dane,
+- grupować dane,
+- tworzyć wykresy (base R i ggplot2),
+- liczyć statystyki,
+- rozwijać analizę.
+
+Powodzenia!
