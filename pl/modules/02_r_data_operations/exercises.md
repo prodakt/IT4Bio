@@ -308,17 +308,25 @@ Podstawa to sktyp z zadaniami wstępnymi, każde z 2 zadań na zaliczenie ocenia
 # Zadanie 1 — Analiza pliku GTF/GFF (ENSEMBL)
 
 Pobierz plik adnotacyjny genomu z bazy **ENSEMBL**.
+Aby zróżnicować analizowane dane pomiędzy studentami, użyj **chromosomu odpowiadającego miesiącowi Twojego urodzenia**.
+Możesz zrobić to na dwa sposoby:
 
-Przykład:
+1. Pobierz pełny plik adnotacyjny genomu (GTF), np.:
 
 ```
 Homo_sapiens.GRCh38.113.gtf.gz
 ```
 
+Następnie wczytaj go do R i **wybierz tylko rekordy dotyczące chromosomu o numerze równym miesiącowi Twojego urodzenia**.
+*Uwaga: pełny plik GTF jest duży, dlatego operacja może wymagać większej ilości pamięci RAM oraz kilku minut przetwarzania.*
+
+2. Alternatywnie możesz pobrać z bazy ENSEMBL plik GTF zawierający tylko jeden chromosom — ten, którego numer odpowiada **Twojemu miesiącowi urodzenia**.
+W obu przypadkach dalszą analizę wykonuj wyłącznie na rekordach dotyczących wybranego chromosomu.
+
 Po pobraniu:
 
 1. rozpakuj plik (opcjonalnie, jeżeli np. chcesz obejrzeć jego strukturę lub wczytać bezpośrednio jako tabelę - wersja trochę trudniejsza)
-2. wczytaj go do R jako tabelę (podpowiedź: wczytaj GTF - nawet bez rozpakowamia - za pomocą bibloteki rtracklayer funkcją import.gff())
+2. wczytaj go do R jako tabelę (podpowiedź: wczytaj GTF - nawet bez rozpakowamia - za pomocą bibloteki ```rtracklayer``` funkcją ```import.gff()```)
 3. przekonwertuj tabelę adnotacyjną z GRanges na ramkę danych.
 
 ---
