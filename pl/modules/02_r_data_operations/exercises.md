@@ -301,8 +301,8 @@ Petal.Length vs Petal.Width
 
 # Zadanie na zaliczenie modułu
 
-Każdy student wykonuje **jedno z dwóch zadań**.
-
+Każdy student wykonuje wszystkie wybrane zadania i **wspólnie oceniamy kompletność wykonania wszystkich zadań w procentach**.
+Podstawa to sktyp z zadaniami wstępnymi, każde z 2 zadań na zaliczenie ocenianie po 50%. 
 ---
 
 # Zadanie 1 — Analiza pliku GTF/GFF (ENSEMBL)
