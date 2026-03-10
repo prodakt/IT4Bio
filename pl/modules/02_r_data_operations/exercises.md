@@ -317,9 +317,9 @@ Homo_sapiens.GRCh38.113.gtf.gz
 
 Po pobraniu:
 
-1. rozpakuj plik
-2. wczytaj go do R jako tabelę (podpowiedź: wczytaj GTF - nawet bez rozpakowamia - za pomocą bibloteki rtracklayer funkcją import.gff(), następnie przekonwerstuj na tabelę)
-3. 
+1. rozpakuj plik (opcjonalnie, jeżeli np. chcesz obejrzeć jego strukturę lub wczytać bezpośrednio jako tabelę - wersja trochę trudniejsza)
+2. wczytaj go do R jako tabelę (podpowiedź: wczytaj GTF - nawet bez rozpakowamia - za pomocą bibloteki rtracklayer funkcją import.gff())
+3. przekonwertuj tabelę adnotacyjną z GRanges na ramkę danych.
 
 ---
 
