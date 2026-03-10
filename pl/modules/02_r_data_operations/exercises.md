@@ -318,7 +318,8 @@ Homo_sapiens.GRCh38.113.gtf.gz
 Po pobraniu:
 
 1. rozpakuj plik
-2. wczytaj go do R jako tabelę
+2. wczytaj go do R jako tabelę (podpowiedź: wczytaj GTF - nawet bez rozpakowamia - za pomocą bibloteki rtracklayer funkcją import.gff(), następnie przekonwerstuj na tabelę)
+3. 
 
 ---
 
