@@ -19,7 +19,7 @@ Wszystkie operacje wykonujemy na strukturze danych **data.frame**.
 
 ---
 
-# Dane używane w tym module
+## Dane używane w tym module
 
 Do ćwiczeń wykorzystamy:
 
@@ -166,7 +166,7 @@ ostatnich10 <- tail(dane, n = 10)
 
 ---
 
-# Wybór kolumn i wierszy
+## Wybór kolumn i wierszy
 
 W R można wybierać dane na kilka sposobów.
 
@@ -194,7 +194,7 @@ dane$column
 
 ---
 
-# Filtrowanie danych
+## Filtrowanie danych
 
 Filtrowanie polega na wyborze wierszy spełniających określony warunek.
 
@@ -224,7 +224,7 @@ dane[dane$Length > 1000,]
 
 ---
 
-# Wyszukiwanie elementów
+## Wyszukiwanie elementów
 
 Czasami chcemy znaleźć pozycje elementów spełniających warunek.
 
@@ -244,7 +244,7 @@ dane[dane$Chromosome %in% c(1,2,3),]
 
 ---
 
-# Tworzenie nowych kolumn
+## Tworzenie nowych kolumn
 
 Nową kolumnę można dodać bardzo łatwo.
 
@@ -256,7 +256,7 @@ dane$new_column <- dane$Length / 1000
 
 ---
 
-# Podstawowe statystyki
+## Podstawowe statystyki
 
 Najczęściej używane funkcje statystyczne:
 
@@ -277,7 +277,7 @@ median(dane$Length)
 
 ---
 
-# Tabele częstości
+## Tabele częstości
 
 Funkcja:
 
@@ -293,7 +293,7 @@ table(dane$Biotype)
 
 ---
 
-# Sortowanie danych
+## Sortowanie danych
 
 Funkcja:
 
@@ -310,7 +310,7 @@ dane[order(dane$Length, decreasing=TRUE),]
 
 ---
 
-# Podstawowe wykresy
+## Podstawowe wykresy
 
 W tym module używamy **podstawowych funkcji graficznych R**.
 
