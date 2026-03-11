@@ -101,9 +101,9 @@ W podstawowych ćwiczeniach wykorzystamy tabele wygenerowane na zaliczenie modu�
 
 ---
 
-# Podstawowe funkcje pracy z tabelami
+## Podstawowe funkcje pracy z tabelami
 
-## Sprawdzenie struktury danych
+### Sprawdzenie struktury danych
 
 Najważniejsze funkcje do eksploracji danych:
 
