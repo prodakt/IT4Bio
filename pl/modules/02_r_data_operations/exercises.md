@@ -37,7 +37,7 @@ TabGeny.csv
 
 Każdy student posiada własną wersję tej tabeli.
 
-2. **Przykładowy zbiór danych dostępny w R**
+2. **Przykładowy zbiór danych dostępny w R** (można wykorzystać treningowo ten zbiór np. w momencie, kiedy wystąpił problem z wczytaniem innego zestawu danych)
 
 ```
 iris
@@ -92,6 +92,7 @@ Przykładowy wynik:
 ```
 
 W podstawowych ćwiczeniach wykorzystamy tabele wygenerowane na zaliczenie modułu 1 (*TabGeny* lub *rozklady*) lub ewentualnie ten zbiór danych do przećwiczenia podstawowych operacji analizy danych oraz tworzenia wykresów.
+
 
 3. **Dane biologiczne z baz danych** - do zadań na zaliczenie modułu 2
 
@@ -337,6 +338,7 @@ boxplot()
 pie()
 ```
 
+<!--
 ---
 
 # Ćwiczenia podstawowe — praca na własnej tabeli
@@ -379,6 +381,8 @@ Petal.Length vs Petal.Width
 
 4. Narysuj histogram długości płatków.
 5. Narysuj wykres pudełkowy długości płatków dla poszczególnych gatunków.
+
+-->
 
 ---
 
