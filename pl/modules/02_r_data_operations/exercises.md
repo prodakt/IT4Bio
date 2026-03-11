@@ -43,7 +43,57 @@ Każdy student posiada własną wersję tej tabeli.
 iris
 ```
 
-3. **Dane biologiczne z baz danych**
+R zawiera wiele wbudowanych zestawów danych, które służą do nauki analizy danych i demonstracji działania funkcji statystycznych oraz graficznych. Są one dostępne domyślnie po uruchomieniu R i nie wymagają pobierania żadnych plików z internetu.
+
+W systemie R znajduje się kilkadziesiąt takich tabel, pochodzących z różnych dziedzin, np.:
+
+- biologii,
+- ekologii,
+- ekonomii,
+- meteorologii,
+- medycyny.
+
+Jednym z najbardziej znanych przykładów jest zbiór danych **`iris`**, który zawiera pomiary morfologiczne kwiatów trzech gatunków kosaćców (*Iris*).
+
+Tabela `iris` zawiera:
+
+- **150 obserwacji (wierszy)**,
+- **5 kolumn**.
+
+Cztery pierwsze kolumny zawierają **pomiar długości i szerokości elementów kwiatu (w centymetrach)**:
+
+- `Sepal.Length` — długość działki kielicha  
+- `Sepal.Width` — szerokość działki kielicha  
+- `Petal.Length` — długość płatka  
+- `Petal.Width` — szerokość płatka  
+
+Ostatnia kolumna (`Species`) zawiera **nazwę gatunku**:
+
+- `setosa`
+- `versicolor`
+- `virginica`
+
+Możemy zobaczyć pierwsze wiersze tej tabeli poleceniem:
+
+```
+head(iris)
+```
+
+Przykładowy wynik:
+
+```
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+```
+
+W podstawowych ćwiczeniach wykorzystamy tabele wygenerowane na zaliczenie modułu 1 (*TabGeny* lub *rozklady*) lub ewentualnie ten zbiór danych do przećwiczenia podstawowych operacji analizy danych oraz tworzenia wykresów.
+
+3. **Dane biologiczne z baz danych** - do zadań na zaliczenie modułu 2
 
 - plik adnotacyjny genomu **GTF/GFF (ENSEMBL)**
 - tabela wyników **BLAST (HitTable)**
@@ -72,13 +122,46 @@ summary()
 - `str()` – pokazuje strukturę obiektu  
 - `summary()` – podaje podstawowe statystyki
 
-### Przykład
+
+### Przykłady podstawowych operacji na danych
 
 ```
 head(dane)
 str(dane)
 summary(dane)
+table(dane$kolumna)
+
 ```
+
+W skrypcie powinny się znaleźć przykłady **podstawowych funkcji do wyświetlania i podsumowania danych**, a także pierwszych prostych operacji na zbiorach danych.
+
+Podczas przygotowywania skryptu należy zwracać uwagę na:
+
+- **czytelność i czystość kodu**,  
+- **liczne komentarze wyjaśniające działanie funkcji**,  
+- opis możliwych **argumentów (atrybutów) funkcji**, które pozwalają modyfikować jej działanie.
+
+Dzięki temu skrypt stanie się **czytelną dokumentacją wykonywanej analizy**, do której można wrócić po dłuższym czasie.
+
+Przykłady:
+
+```
+head(dane) 
+# funkcja head() wyświetla początek zbioru danych 
+# domyślnie pokazuje pierwsze 6 wierszy
+
+head(dane, n = 100)
+# liczba wyświetlanych wierszy może być zmieniona 
+# poprzez użycie argumentu n
+
+tail(dane)
+# odpowiednik funkcji head(), ale wyświetla koniec zbioru danych
+
+ostatnich10 <- tail(dane, n = 10)
+# wynik działania funkcji można przypisać do zmiennej
+# tutaj zapisujemy ostatnie 10 wierszy tabeli do zmiennej "ostatnich10"
+```
+
 
 ---
 
@@ -307,7 +390,7 @@ Podstawa to sktyp z zadaniami wstępnymi, każde z 2 zadań na zaliczenie ocenia
 
 # Zadanie 1 — Analiza pliku GTF/GFF (ENSEMBL)
 
-Pobierz plik adnotacyjny genomu z bazy **ENSEMBL**.
+Pobierz plik adnotacyjny genomu z bazy **ENSEMBL** (https://www.ensembl.org/index.html).
 Aby zróżnicować analizowane dane pomiędzy studentami, użyj **chromosomu odpowiadającego miesiącowi Twojego urodzenia**.
 Możesz zrobić to na dwa sposoby:
 
