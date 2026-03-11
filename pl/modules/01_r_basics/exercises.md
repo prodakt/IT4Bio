@@ -390,3 +390,88 @@ Na kolejnych zajęciach będziesz:
 - rozwijać analizę.
 
 Powodzenia!
+
+---
+
+# Przykładowe wygenerowane dane
+
+Poniżej pokazano przykładowy wynik działania skryptu generującego dane używane w kolejnych modułach kursu.  
+Są to **przykładowe tabele wygenerowane zgodnie z instrukcją zadania zaliczeniowego z modułu 1**.
+
+Każdy student generuje własną wersję tabeli na podstawie swojego numeru indeksu, dlatego wartości w Twojej tabeli mogą się różnić od pokazanych poniżej.
+
+
+
+## Przykładowa tabela `geny`
+
+Podgląd pierwszych i ostatnich wierszy tabeli:
+
+```
+# 4.11. Podgląd: pierwsze i ostatnie wiersze
+head(geny, n = 5)
+
+       GeneID Biotype Length Chromosome      Location Exons     Organism
+1 Gene_000001    rRNA  18147          4 564139-588258    17 Homo sapiens
+2 Gene_000002   snRNA  28939          4 859208-901335     3 Mus musculus
+3 Gene_000003  lncRNA  18213          5 650289-677611    15 Homo sapiens
+4 Gene_000004  lncRNA  37791          2 596839-603912    12 Mus musculus
+5 Gene_000005  lncRNA  24490          3 850206-857307    14 Mus musculus
+
+tail(geny, n = 5)
+
+          GeneID Biotype Length Chromosome      Location Exons   Organism
+1524 Gene_001524    rRNA  39872          4 194634-222911    20 Sus scrofa
+1525 Gene_001525    rRNA  19176          1 358081-384399    13 Bos taurus
+1526 Gene_001526   snRNA  49162          4 193178-206391    16 Sus scrofa
+1527 Gene_001527  lncRNA  11028          5 220369-239365     3 Sus scrofa
+1528 Gene_001528   snRNA   3940          4 814875-841809    19 Bos taurus
+```
+
+
+
+## Przykładowa tabela `rozklady`
+
+Podgląd pierwszych wierszy tabeli:
+
+```
+head(rozklady)
+
+  grupa lp       rnorm losowe SampleNames
+1     1  1 -1.09109401      7     sample1
+2     2  2  0.02155754      2     sample2
+3     1  3  2.56511471      7     sample3
+4     2  4 -0.14886466     10     sample4
+5     1  5 -1.22536093      4     sample1
+6     2  6 -0.70285357      0     sample2
+```
+
+Sprawdzenie struktury danych:
+
+```
+str(rozklady)
+
+'data.frame':	2551 obs. of  5 variables:
+ $ grupa      : Factor w/ 2 levels "1","2": 1 2 1 2 1 2 1 2 1 2 ...
+ $ lp         : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ rnorm      : num  -1.0911 0.0216 2.5651 -0.1489 -1.2254 ...
+ $ losowe     : int  7 2 7 10 4 0 8 6 0 4 ...
+ $ SampleNames: chr  "sample1" "sample2" "sample3" "sample4" ...
+```
+
+
+
+# Przykładowe pliki danych
+
+Dla ułatwienia pracy w kolejnych modułach kursu **przykładowe wersje wygenerowanych tabel zostały również dołączone do repozytorium**.
+
+Można je pobrać bezpośrednio z poniższych linków:
+
+**Tabela genów**
+
+https://github.com/prodakt/IT4Bio/blob/main/pl/modules/data/TabGeny.csv
+
+**Tabela rozkładów**
+
+https://github.com/prodakt/IT4Bio/blob/main/pl/modules/data/TabRozklady.csv
+
+Pliki te mogą być używane do ćwiczeń w kolejnych modułach kursu (np. operacji na danych, wizualizacji oraz analiz bioinformatycznych).
