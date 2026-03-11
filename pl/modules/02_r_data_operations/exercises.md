@@ -388,7 +388,7 @@ Petal.Length vs Petal.Width
 
 # Zadania na zaliczenie modułu
 Każdy student wykonuje wszystkie wybrane zadania i **wspólnie oceniamy kompletność wykonania wszystkich zadań w procentach**.
-Podstawa to sktyp z zadaniami wstępnymi, każde z 2 zadań na zaliczenie ocenianie po 50%. 
+Podstawa to sktyp z zadaniami wstępnymi (podstawowymi, czyli podstawowe operacja na danych), każde z 2 zadań na zaliczenie ocenianie po 50%. 
 
 ---
 
