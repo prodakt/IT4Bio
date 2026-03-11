@@ -538,6 +538,26 @@ mean
 median
 ```
 
+ale **tylko dla podzbioru danych**, w którym długość alignmentu spełnia warunek:
+
+- jest **większa lub równa numerowi porządkowemu dnia miesiąca**, w którym wykonujesz analizę,  
+- oraz **mniejsza lub równa numerowi dnia Twojego urodzenia w roku**.
+
+Innymi słowy, analizuj tylko te rekordy, dla których:
+
+```
+[dzień miesiąca wykonania analizy] ≤ alignment length ≤ [dzień Twojego urodzenia]
+```
+
+Przykład:
+
+jeżeli analizę wykonujesz **8 dnia miesiąca**, a Twój dzień urodzenia to **23**,  
+to statystyki należy policzyć tylko dla rekordów spełniających warunek:
+
+```
+8 ≤ alignment length ≤ 23
+```
+
 ---
 
 ## Wykresy
