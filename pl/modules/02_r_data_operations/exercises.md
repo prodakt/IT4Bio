@@ -339,7 +339,7 @@ pie()
 
 ---
 
-# Ćwiczenia wstępne — praca na własnej tabeli
+# Ćwiczenia podstawowe — praca na własnej tabeli
 
 Wczytaj tabelę z poprzedniego modułu.
 
@@ -357,7 +357,7 @@ Wczytaj tabelę z poprzedniego modułu.
 
 ---
 
-# Ćwiczenia dodatkowe — dane wbudowane w R
+# Ćwiczenia podstawowe — dane wbudowane w R
 
 W R dostępnych jest wiele przykładowych zestawów danych.
 
@@ -382,13 +382,13 @@ Petal.Length vs Petal.Width
 
 ---
 
-# Zadanie na zaliczenie modułu
+# Zadania na zaliczenie modułu
 
 Każdy student wykonuje wszystkie wybrane zadania i **wspólnie oceniamy kompletność wykonania wszystkich zadań w procentach**.
 Podstawa to sktyp z zadaniami wstępnymi, każde z 2 zadań na zaliczenie ocenianie po 50%. 
 ---
 
-# Zadanie 1 — Analiza pliku GTF/GFF (ENSEMBL)
+## Zadanie 1 — Analiza pliku GTF/GFF (ENSEMBL)
 
 Pobierz plik adnotacyjny genomu z bazy **ENSEMBL** (https://www.ensembl.org/index.html).
 Aby zróżnicować analizowane dane pomiędzy studentami, użyj **chromosomu odpowiadającego miesiącowi Twojego urodzenia**.
@@ -414,7 +414,7 @@ Po pobraniu:
 
 ---
 
-## Analiza danych
+### Analiza danych
 
 Oblicz następujące statystyki:
 
@@ -426,7 +426,7 @@ Oblicz następujące statystyki:
 
 ---
 
-## Statystyki długości genów
+### Statystyki długości genów
 
 Oblicz:
 
@@ -437,7 +437,7 @@ Oblicz:
 
 ---
 
-## Statystyki liczby egzonów
+### Statystyki liczby egzonów
 
 Oblicz:
 
@@ -448,7 +448,7 @@ Oblicz:
 
 ---
 
-## Wykresy
+### Wykresy
 
 Wykonaj następujące wykresy:
 
@@ -477,7 +477,7 @@ pie()
 
 ---
 
-# Zadanie 2 — Analiza wyników BLAST
+## Zadanie 2 — Analiza wyników BLAST
 
 Wykonaj przeszukiwanie bazy **RefSeq proteins** narzędziem **BLASTp**.
 
@@ -503,7 +503,7 @@ Zapisz wynik w formacie **HitTable**.
 
 ---
 
-## Wczytanie danych
+### Wczytanie danych
 
 Wczytaj tabelę do R jako:
 
@@ -513,14 +513,14 @@ BLAST_res
 
 ---
 
-## Czyszczenie danych
+### Czyszczenie danych
 
 1. Usuń rekordy z `NA` w kolumnie percent identity.
 2. W kolumnie `E-value` zamień `NA` na wartość `1`.
 
 ---
 
-## Statystyki
+### Statystyki
 
 Policz statystyki dla:
 
@@ -560,23 +560,23 @@ to statystyki należy policzyć tylko dla rekordów spełniających warunek:
 
 ---
 
-## Wykresy
+### Wykresy
 
 Wykonaj:
 
-### Histogram długości alignmentów
+#### Histogram długości alignmentów
 
 ```
 hist()
 ```
 
-### Wykres pudełkowy identyczności sekwencji
+#### Wykres pudełkowy identyczności sekwencji
 
 ```
 boxplot()
 ```
 
-### Wykres punktowy
+#### Wykres punktowy
 
 zależność:
 
@@ -592,7 +592,7 @@ E-value = 0
 
 ---
 
-# Podsumowanie
+## Podsumowanie
 
 W skrypcie należy umieścić:
 
