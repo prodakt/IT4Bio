@@ -399,15 +399,15 @@ Aby zróżnicować analizowane dane pomiędzy studentami, użyj **chromosomu odp
 Możesz zrobić to na dwa sposoby:
 
 1. Pobierz pełny plik adnotacyjny genomu (GTF), np.:
-
+https://ftp.ensembl.org/pub/release-115/gtf/homo_sapiens/
 ```
-Homo_sapiens.GRCh38.113.gtf.gz
+Homo_sapiens.GRCh38.115.gtf.gz
 ```
 
 Następnie wczytaj go do R i **wybierz tylko rekordy dotyczące chromosomu o numerze równym miesiącowi Twojego urodzenia**.
 *Uwaga: pełny plik GTF jest duży, dlatego operacja może wymagać większej ilości pamięci RAM oraz kilku minut przetwarzania.*
 
-2. Alternatywnie możesz pobrać z bazy ENSEMBL plik GTF zawierający tylko jeden chromosom — ten, którego numer odpowiada **Twojemu miesiącowi urodzenia**.
+2. Alternatywnie możesz pobrać z bazy ENSEMBL plik GTF zawierający tylko jeden chromosom — ten, którego numer odpowiada **Twojemu miesiącowi urodzenia** (https://ftp.ensembl.org/pub/release-115/gff3/homo_sapiens/).
 W obu przypadkach dalszą analizę wykonuj wyłącznie na rekordach dotyczących wybranego chromosomu.
 
 Po pobraniu:
@@ -482,6 +482,9 @@ pie()
 ---
 
 ## Zadanie 2 — Analiza wyników BLAST
+
+BLAST zaimplementowany online w NCBI: https://blast.ncbi.nlm.nih.gov/Blast.cgi
+Jak czytać wyniki BLAST: https://ftp.ncbi.nlm.nih.gov/pub/factsheets/HowTo_BLAST_NewResultPage.pdf
 
 Wykonaj przeszukiwanie bazy **RefSeq proteins** narzędziem **BLASTp**.
 
