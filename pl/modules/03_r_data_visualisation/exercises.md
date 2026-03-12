@@ -564,17 +564,204 @@ Przed rysowaniem wykresu należy ponownie sprawdzić strukturę danych:
 
 ---
 
-### Pierwszy prosty wykres w ggplot2
 
-Student ma wykonać **jeden prosty wykres** dla swojej tabeli.
+### Składnia ggplot2 — podstawowa idea
 
-Przykładowe możliwości:
+W przeciwieństwie do `plot()` z base R, pakiet **ggplot2** działa według tzw. **Grammar of Graphics**.  
+Oznacza to, że wykres buduje się **warstwowo**.
 
-- wykres punktowy dwóch zmiennych liczbowych,
-- histogram jednej zmiennej liczbowej,
-- boxplot jednej zmiennej względem grupy.
+Podstawowy schemat wygląda tak:
 
-To ma być **najprostszy możliwy wykres**, bez rozbudowanej estetyki.
+```r
+ggplot(dane, aes(x = zmienna1, y = zmienna2)) +
+  geom_point()
+```
+
+Każdy element tej składni ma określoną funkcję:
+
+#### `ggplot()`
+
+Funkcja inicjująca wykres.  
+Podajemy w niej **tabelę danych**, z której będą pobierane zmienne.
+
+Przykład:
+
+```r
+ggplot(iris)
+```
+
+---
+
+#### `aes()` — aesthetics
+
+Funkcja `aes()` definiuje **mapowanie danych na elementy wykresu**.
+
+Najczęściej określamy w niej:
+- `x` — zmienna na osi X
+- `y` — zmienna na osi Y
+- `color` — kolor punktów zależny od zmiennej
+- `fill` — wypełnienie
+- `size` — wielkość punktów
+
+Przykład:
+```r
+aes(x = Sepal.Length, y = Petal.Length)
+```
+
+oznacza:
+- oś X → `Sepal.Length`
+- oś Y → `Petal.Length`
+
+---
+
+#### `geom_*()` — geometria wykresu
+
+Funkcje `geom_*()` określają **typ wykresu**.
+
+Najczęściej używane:
+
+- `geom_point()` — wykres punktowy
+- `geom_histogram()` — histogram
+- `geom_boxplot()` — wykres pudełkowy
+- `geom_bar()` — wykres słupkowy
+- `geom_line()` — wykres liniowy
+
+---
+
+### Przykład 1 — scatter plot (wykres punktowy)
+
+Najprostszy wykres punktowy dla danych `iris`.
+
+```r
+ggplot(iris, aes(x = Sepal.Length, y = Petal.Length)) +
+  geom_point()
+```
+
+Interpretacja:
+- dane → `iris`
+- oś X → długość działki kielicha
+- oś Y → długość płatka
+- każdy rekord → jeden punkt
+
+---
+
+#### Alternatywa dla danych z kursu
+Jeżeli student pracuje na tabeli `TabRozklady`:
+
+```r
+ggplot(rozklady, aes(x = losowe, y = rnorm)) +
+  geom_point()
+```
+
+Jeżeli student pracuje na tabeli `TabGeny`:
+
+```r
+ggplot(geny, aes(x = Exons, y = Length)) +
+  geom_point()
+```
+
+---
+
+### Przykład 2 — wykres słupkowy (bar plot)
+
+Wykres słupkowy pokazuje **liczebność kategorii**.
+Najprostszy przykład dla danych `iris`:
+
+```r
+ggplot(iris, aes(x = Species)) +
+  geom_bar()
+```
+
+Interpretacja:
+
+- oś X → gatunek rośliny
+- wysokość słupka → liczba obserwacji
+
+---
+
+### Alternatywa dla danych z kursu
+
+Tabela `TabGeny`:
+
+```r
+ggplot(geny, aes(x = Biotype)) +
+  geom_bar()
+```
+
+Tabela `TabRozklady`:
+
+```r
+ggplot(rozklady, aes(x = grupa)) +
+  geom_bar()
+```
+
+---
+
+# Co student powinien zrozumieć na tym etapie
+
+Na tym etapie ważne jest zrozumienie trzech elementów:
+
+1️⃣ **Źródło danych**
+
+```r
+ggplot(dane)
+```
+
+2️⃣ **Mapowanie zmiennych na osie**
+
+```r
+aes(x = ..., y = ...)
+```
+
+3️⃣ **Typ wykresu**
+
+```r
+geom_point()
+geom_bar()
+```
+
+---
+
+# Minimalne zadanie
+
+Student powinien wykonać **dwa wykresy**:
+1️⃣ jeden **scatter plot**
+2️⃣ jeden **bar plot**
+
+dla wybranej tabeli:
+- `TabGeny`
+- `TabRozklady`
+- `TabBLAST`
+- `TabGTF`
+- `iris`
+
+Nie trzeba jeszcze dodawać:
+- kolorów,
+- tematów,
+- podpisów,
+- legend.
+
+To pojawi się w **kolejnej części modułu oraz w zadaniach zaliczeniowych**.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
