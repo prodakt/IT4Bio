@@ -19,14 +19,14 @@ Po zakończeniu tej części modułu student powinien umieć:
 
 ## Dane używane w tym module
 
-Do ćwiczeń można użyć **jednej wybranej tabeli** z poprzednich modułów lub danych wbudowanych w R.
+Do ćwiczeń można użyć **jednej wybranej tabeli** z poprzednich modułów lub danych wbudowanych w R (`TabGeny`, `TabRozklady`, `TabBLAST`, `TabGTF` lub `iris`).
 
-Student wybiera **jedną tabelę główną**, na której ćwiczy większość procedur:
+Student wybiera **jedną tabelę główną**, na której ćwiczy większość procedur. W razie problemów z własną tabelą z katalogu "data" można pobrać jedną z:
 
 - `TabGeny.csv`
 - `TabRozklady.csv`
 - `BLAST_HitTab.txt`
-- `TabGTF.csv`
+- `TabGTFgenes.zip`
 - `iris`
 
 Dopuszczalne jest także testowanie wybranych funkcji na **małych wektorach tworzonych ręcznie**, jeżeli pomaga to zrozumieć działanie funkcji.
