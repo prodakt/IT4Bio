@@ -25,7 +25,7 @@ Student wybiera **jedną tabelę główną**, na której ćwiczy większość pr
 
 - `TabGeny.csv`
 - `TabRozklady.csv`
-- `TabBLAST.csv`
+- `BLAST_HitTab.txt`
 - `TabGTF.csv`
 - `iris`
 
