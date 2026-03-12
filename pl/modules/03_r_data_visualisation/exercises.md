@@ -539,7 +539,7 @@ Po przećwiczeniu podstawowych wykresów w base R student powinien wykonać **je
 
 Nie jest to jeszcze główna część modułu — to tylko wprowadzenie do środowiska, które będzie rozwijane w zadaniach zaliczeniowych.
 
----
+
 
 ### Instalacja i załadowanie biblioteki
 
@@ -552,21 +552,16 @@ install.packages("ggplot2")
 library(ggplot2)
 ```
 
----
 
 ### Sprawdzenie danych
-
 Przed rysowaniem wykresu należy ponownie sprawdzić strukturę danych:
 
 - `head(dane)`
 - `str(dane)`
 - `summary(dane)`
 
----
-
 
 ### Składnia ggplot2 — podstawowa idea
-
 W przeciwieństwie do `plot()` z base R, pakiet **ggplot2** działa według tzw. **Grammar of Graphics**.  
 Oznacza to, że wykres buduje się **warstwowo**.
 
@@ -590,12 +585,9 @@ Przykład:
 ggplot(iris)
 ```
 
----
-
 #### `aes()` — aesthetics
 
 Funkcja `aes()` definiuje **mapowanie danych na elementy wykresu**.
-
 Najczęściej określamy w niej:
 - `x` — zmienna na osi X
 - `y` — zmienna na osi Y
@@ -612,24 +604,18 @@ oznacza:
 - oś X → `Sepal.Length`
 - oś Y → `Petal.Length`
 
----
 
 #### `geom_*()` — geometria wykresu
-
 Funkcje `geom_*()` określają **typ wykresu**.
-
 Najczęściej używane:
-
 - `geom_point()` — wykres punktowy
 - `geom_histogram()` — histogram
 - `geom_boxplot()` — wykres pudełkowy
 - `geom_bar()` — wykres słupkowy
 - `geom_line()` — wykres liniowy
 
----
 
 ### Przykład 1 — scatter plot (wykres punktowy)
-
 Najprostszy wykres punktowy dla danych `iris`.
 
 ```r
@@ -643,7 +629,6 @@ Interpretacja:
 - oś Y → długość płatka
 - każdy rekord → jeden punkt
 
----
 
 #### Alternatywa dla danych z kursu
 Jeżeli student pracuje na tabeli `TabRozklady`:
@@ -660,10 +645,8 @@ ggplot(geny, aes(x = Exons, y = Length)) +
   geom_point()
 ```
 
----
 
 ### Przykład 2 — wykres słupkowy (bar plot)
-
 Wykres słupkowy pokazuje **liczebność kategorii**.
 Najprostszy przykład dla danych `iris`:
 
@@ -673,14 +656,11 @@ ggplot(iris, aes(x = Species)) +
 ```
 
 Interpretacja:
-
 - oś X → gatunek rośliny
 - wysokość słupka → liczba obserwacji
 
----
 
 ### Alternatywa dla danych z kursu
-
 Tabela `TabGeny`:
 
 ```r
@@ -697,74 +677,26 @@ ggplot(rozklady, aes(x = grupa)) +
 
 ---
 
-# Co student powinien zrozumieć na tym etapie
+## Co student powinien zrozumieć na tym etapie
 
 Na tym etapie ważne jest zrozumienie trzech elementów:
-
 1️⃣ **Źródło danych**
-
 ```r
 ggplot(dane)
 ```
 
 2️⃣ **Mapowanie zmiennych na osie**
-
 ```r
 aes(x = ..., y = ...)
 ```
 
 3️⃣ **Typ wykresu**
-
 ```r
 geom_point()
 geom_bar()
 ```
 
 ---
-
-# Minimalne zadanie
-
-Student powinien wykonać **dwa wykresy**:
-1️⃣ jeden **scatter plot**
-2️⃣ jeden **bar plot**
-
-dla wybranej tabeli:
-- `TabGeny`
-- `TabRozklady`
-- `TabBLAST`
-- `TabGTF`
-- `iris`
-
-Nie trzeba jeszcze dodawać:
-- kolorów,
-- tematów,
-- podpisów,
-- legend.
-
-To pojawi się w **kolejnej części modułu oraz w zadaniach zaliczeniowych**.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
 ## Zadanie obowiązkowe zamykające tę część modułu 
 
 Na wybranej tabeli (`TabGeny`, `TabRozklady`, `TabBLAST`, `TabGTF` lub `iris`) student musi wykonać i zapisać w skrypcie:
