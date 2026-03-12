@@ -696,11 +696,9 @@ geom_point()
 geom_bar()
 ```
 
----
 ## Zadanie obowiązkowe zamykające tę część modułu 
 
 Na wybranej tabeli (`TabGeny`, `TabRozklady`, `TabBLAST`, `TabGTF` lub `iris`) student musi wykonać i zapisać w skrypcie:
-
 1. co najmniej **5 różnych wariantów wykresu `plot()`**,  
 2. co najmniej **1 wykres z użyciem `lines()` i `points()`**,  
 3. **1 histogram**,  
@@ -711,13 +709,11 @@ Na wybranej tabeli (`TabGeny`, `TabRozklady`, `TabBLAST`, `TabGTF` lub `iris`) s
 8. **1 bardzo prosty wykres w `ggplot2`**.
 
 Każdy wykres powinien posiadać:
-
 - czytelny tytuł,
 - opisy osi (jeżeli to potrzebne),
 - sensowny dobór danych,
 - komentarz w skrypcie wyjaśniający, co przedstawia.
 
----
 
 ## Uwaga organizacyjna
 
@@ -725,8 +721,199 @@ Ta część modułu służy do **samodzielnego przećwiczenia technik rysowania 
 Zadania zaliczeniowe będą stanowiły **rozwinięcie tych umiejętności**, już w większym stopniu w środowisku `ggplot2`.
 
 Dlatego na tym etapie najważniejsze jest:
-
 - zrozumienie działania funkcji,
 - samodzielne przetestowanie różnych wariantów parametrów,
 - nauczenie się zapisywania wykresów,
 - wyrobienie nawyku opisywania wykresów i kodu.
+
+---
+
+# Zadania na zaliczenie modułu 3 — wizualizacja danych w ggplot2
+
+Na zakończenie modułu należy wykonać **dwa zadania z wykorzystaniem pakietu `ggplot2`**.  
+Celem jest pokazanie, że student potrafi:
+- przygotować dane do wizualizacji,
+- dobrać odpowiedni typ wykresu,
+- zastosować estetyki (`aes`) w `ggplot2`,
+- przedstawić dane biologiczne w czytelnej formie graficznej.
+
+Wykresy należy zapisać w skrypcie oraz **wyeksportować do plików graficznych**.
+
+Można pracować na jednej z tabel wygenerowanych w poprzednich modułach:
+- `TabGeny`
+- `TabRozklady`
+- `TabBLAST`
+- `TabGTF`
+- `iris`
+
+Jeżeli tabela została zapisana jako plik CSV, należy ją najpierw wczytać do R.
+
+---
+
+# Zadanie 1 — wizualizacja własnej tabeli danych
+
+W tym zadaniu należy przygotować **dwa wykresy opisujące strukturę danych w wybranej tabeli**.
+
+Student może wybrać jedną z dwóch tabel:
+- `TabRozklady`
+- `TabGeny`
+
+---
+
+## Wariant A — tabela `TabRozklady`
+
+Wykonaj dwa wykresy:
+
+### 1. Scatter plot
+
+Narysuj wykres punktowy zależności:
+- `losowe` (oś X)
+- `rnorm` (oś Y)
+
+Estetyki wykresu:
+- kolor punktów → `grupa`
+- kształt punktów → `SampleNames`
+
+Na wykresie powinny być widoczne:
+- tytuł wykresu
+- opisy osi
+- legenda
+
+---
+
+### 2. Wykres liczebności prób
+
+Przedstaw **liczebność obserwacji w poszczególnych próbach (`SampleNames`)**.
+
+Można użyć jednego z wykresów:
+- **barplot**
+- **lollipop plot**
+
+Wykres powinien zawierać:
+- tytuł
+- opisy osi
+- czytelne kolory
+
+---
+
+## Wariant B — tabela `TabGeny`
+
+Wykonaj dwa wykresy:
+
+### 1. Scatter plot
+
+Narysuj wykres punktowy zależności:
+- `Exons` (oś X)
+- `Length` (oś Y)
+
+Estetyki wykresu:
+- kolor punktów → `Biotype`
+- kształt punktów → `Chromosome`
+
+Wykres powinien zawierać:
+- tytuł
+- opisy osi
+- legendę
+
+---
+
+### 2. Liczebność biotypów genów
+
+Przedstaw **liczebność poszczególnych biotypów genów (`Biotype`)**.
+
+Można użyć jednego z wykresów:
+- **pie plot**
+- **lollipop plot**
+- **barplot**
+
+Wykres powinien zawierać:
+- tytuł
+- legendę lub opisy kategorii
+
+---
+
+# Zadanie 2 — analiza biologiczna danych genów
+
+W tym zadaniu pracujemy na tabeli **`TabGeny`**.
+Należy przygotować **dwa wykresy pokazujące rozkład cech genów w genomie**.
+
+---
+
+## 1. Rozkład cech genów na chromosomach
+
+Narysuj wykres pokazujący **rozkład genów w poszczególnych chromosomach**.
+
+Można użyć jednego z wykresów:
+- **boxplot**
+- **violin plot**
+- **połączenie boxplot + violin plot**
+
+Na osi X powinny znajdować się:
+
+```
+Chromosome
+```
+
+Na osi Y można przedstawić jedną z cech:
+
+- `Length` — długość genu
+- `Exons` — liczba eksonów
+
+### Kolorowanie chromosomów
+
+Jeżeli na wykresie znajduje się **wiele chromosomów**, należy je pokolorować automatyczną skalą kolorów.
+Chromosomy powinny być kolorowane **skalą tęczy** (np. `rainbow()`), tak aby łatwo odróżnić poszczególne kategorie.
+
+---
+
+## 2. Porównanie genów kodujących i niekodujących
+
+Porównaj **geny kodujące białka (`protein_coding`) oraz geny niekodujące (`lncRNA`)**.
+Przygotuj wykres pokazujący różnice między tymi grupami.
+
+Można użyć jednego z wykresów:
+- **violin plot**
+- **boxplot**
+- **połączenie violin plot + boxplot**
+
+Na osi X powinny znajdować się:
+
+```
+Biotype
+```
+
+Na osi Y można przedstawić:
+
+- `Length` — długość genu  
+lub
+- `Exons` — liczbę eksonów
+
+Na wykresie powinno być widoczne porównanie przynajmniej dwóch grup:
+
+- `protein_coding`
+- `lncRNA`
+
+---
+
+# Wymagania techniczne
+
+Każdy student musi:
+1. użyć pakietu `ggplot2`,
+2. przygotować **łącznie 4 wykresy** (2 w zadaniu 1 i 2 w zadaniu 2),
+3. dodać:
+- tytuł wykresu
+- opisy osi
+- legendę (jeżeli występują grupy)
+
+4. zapisać przynajmniej **dwa wykresy do plików graficznych** (`PDF`, `PNG` lub `TIFF`).
+
+---
+
+# Co należy oddać
+
+W skrypcie powinny znaleźć się:
+- kod generujący wykresy,
+- komentarze wyjaśniające kolejne kroki,
+- zapis wykresów do plików.
+
+Wykresy powinny być czytelne i poprawnie opisane.
