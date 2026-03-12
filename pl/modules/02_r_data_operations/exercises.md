@@ -405,7 +405,7 @@ Homo_sapiens.GRCh38.115.gtf.gz
 ```
 
 Następnie wczytaj go do R i **wybierz tylko rekordy dotyczące chromosomu o numerze równym miesiącowi Twojego urodzenia**.
-*Uwaga: pełny plik GTF jest duży, dlatego operacja może wymagać większej ilości pamięci RAM oraz kilku minut przetwarzania.*
+*Uwaga: pełny plik GTF jest duży, dlatego operacja może wymagać większej ilości pamięci RAM oraz kilku minut przetwarzania. Należy jednak pamiętać, że struktura plików GTF i GFF nie są identyczne (np. w GTF "Type" zawiera jasną definicję "gene", "transcript", "exon" i "Biotype" odnosi się do tej struktury; lub inny przykład: w GFF nie jest łatwo na zasadzie prostej filtracji tabeli obliczyć ilość exonów należących do danego genu). Dlatego opcją pewniejszą jest załadować cay GTF i wybrać z niego pojedynczy chromosom, a następnie usunąć cały GTF z pamięci funkcą rm(tabGTF)*
 
 2. Alternatywnie możesz pobrać z bazy ENSEMBL plik GTF zawierający tylko jeden chromosom — ten, którego numer odpowiada **Twojemu miesiącowi urodzenia** (https://ftp.ensembl.org/pub/release-115/gff3/homo_sapiens/).
 W obu przypadkach dalszą analizę wykonuj wyłącznie na rekordach dotyczących wybranego chromosomu.
