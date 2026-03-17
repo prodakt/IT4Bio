@@ -834,7 +834,7 @@ Wykres powinien zawierać:
 
 # Zadanie 2 — analiza biologiczna danych genów
 
-W tym zadaniu pracujemy na tabeli **`TabGeny`**.
+W tym zadaniu pracujemy na tabeli **`TabGTF`** . Zmienna (lub tabela na dysku) wygenerowana była na zakończene poprzedniego modułu z pliku adnotacyjnego GTF lub GFF. Należy pamiętać, że znacznie łatwiej pracować jest na tabeli z całego genomu, wczytanej z formatu GTF za pmocą biblioteki `rtracklayer` oraz przefiltrowanej do tych rzędów, które odnoszą się do genów. Dodatkowo można uprościć sobie pracę, jeżeli wyeliminujemy z tabeli te rzędy, które nie dotyczą podstawowych chromosomów genomu i pozostawimy tylko te kolumny, które są dla nas istotne do narysowania wykresu. Wtedy tabela będzie znacznie mniejsza i czyteniejsza.
 Należy przygotować **dwa wykresy pokazujące rozkład cech genów w genomie**.
 
 ---
