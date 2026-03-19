@@ -426,6 +426,69 @@ dev.off()
 - zapis do TIFF,
 - sprawdzenie, gdzie plik się zapisał (`getwd()`).
 
+
+
+#### Formaty graficzne w R (graphics devices)
+
+
+**Formaty wektorowe (zalecane do publikacji)**
+
+- **`pdf()`**  
+  → zapis do pliku PDF (grafika wektorowa)  
+  → idealny do artykułów naukowych i raportów  
+
+- **`svg()`**  
+  → zapis do formatu SVG (Scalable Vector Graphics)  
+  → przydatny do edycji w programach graficznych (np. Illustrator, Inkscape)  
+
+- **`postscript()`**  
+  → zapis do formatu PS/EPS  
+  → starszy standard używany w publikacjach  
+
+**Cechy formatów wektorowych:**
+- brak utraty jakości przy skalowaniu  
+- małe pliki dla prostych wykresów  
+- idealne do publikacji naukowych  
+
+---
+
+**Formaty rastrowe (pikselowe)**
+
+- **`png()`**  
+  → bardzo popularny format do prezentacji i internetu  
+
+- **`jpeg()` / `jpg()`**  
+  → format stratny (kompresja), mniejszy rozmiar pliku  
+
+- **`tiff()`**  
+  → wysoka jakość, często wymagany przez czasopisma (np. 300 dpi)  
+
+- **`bmp()`**  
+  → format bez kompresji, rzadko używany  
+
+**Cechy formatów rastrowych:**
+- zapis jako piksele  
+- jakość zależy od rozdzielczości (`res=`)  
+- większe pliki przy wysokiej jakości  
+
+
+
+**Najczęstsze zastosowania**
+
+- `pdf()` → publikacje naukowe, raporty  
+- `png()` → prezentacje, materiały dydaktyczne  
+- `tiff(res = 300)` → artykuły naukowe (wymogi wydawnictw)  
+- `svg()` → dalsza edycja grafiki  
+
+
+
+**Ważna różnica**
+
+- **PDF / SVG** → grafika wektorowa (linie, kształty)  
+- **PNG / JPG / TIFF** → grafika rastrowa (piksele)  
+
+
+
 ---
 
 ### 12. Wykresy wielowarstwowe na realnych danych
