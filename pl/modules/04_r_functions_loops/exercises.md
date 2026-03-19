@@ -41,6 +41,7 @@ Napisz funkcję, która:
 Funkcja powinna łączyć działanie funkcji:
 - `head()`
 - `tail()`
+
 w jedno wspólne narzędzie (ale nie musi korzystać z tych funkcji).
 
 ---
