@@ -39,11 +39,9 @@ Napisz funkcję, która:
 - opcjonalnie wypisuje informację, ile wierszy zostało pominiętych pośrodku.
 
 Funkcja powinna łączyć działanie funkcji:
-
 - `head()`
 - `tail()`
-
-w jedno wspólne narzędzie.
+w jedno wspólne narzędzie (ale nie musi korzystać z tych funkcji).
 
 ---
 
