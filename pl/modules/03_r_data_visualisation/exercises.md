@@ -381,10 +381,34 @@ Wykresy należy umieć zapisać do pliku.
 
 #### Przykład
 
+Generowanie wykresu bezpośrednio z kodu do pliku graficznego na dysku obejmuje 3 polecenia:
 ```r
-pdf("pierwszy_wykres.pdf")
-plot(wektor)
-dev.off()
+pdf("pierwszy_wykres.pdf")  
+# otwarcie urządzenia graficznego (graphics device) - w tym przypadku typu PDF
+# (czyli inicjalizacja strumienia wyjścia dla grafiki wektorowej do pliku),
+# które przechwytuje wszystkie kolejne operacje graficzne
+# i zapisuje je jako grafikę wektorową w pliku PDF
+
+plot(wektor)  
+# wygenerowanie wykresu i zapisanie go do aktywnego urządzenia graficznego (device)
+# (zamiast na ekran, trafia do otwartego urządzenia PDF)
+
+dev.off()  
+# zamknięcie aktywnego urządzenia graficznego i opróżnienie bufora (flush),
+# finalizacja zapisu danych w urządzeniu, co skutkuje zapisaniem pliku na dysku
+```
+W oknie konsoli powinien pojawić się komunikat:
+```
+null device 
+          1 
+```
+
+
+W skrócie:
+```r
+pdf("pierwszy_wykres.pdf")     # rysuj do pliku pdf
+   plot(wektor)                # ten wykres
+dev.off()                      # zapisz i zamknij
 ```
 
 #### Wariant TIFF
