@@ -485,7 +485,7 @@ W skrypcie powinny znaleźć się:
 
 ## Zadanie 2 — uproszczona analiza różnic ekspresji
 
-W tym zadaniu student pracuje na przygotowanej wcześniej tabeli ekspresji genów, która została udostępniona w repozytorium kursu.
+W tym zadaniu student pracuje na przygotowanej wcześniej tabeli ekspresji genów, która została udostępniona w repozytorium kursu (katalog `data` plik `expression_matrix.tab`).
 
 ### Ważna informacja
 
@@ -540,26 +540,16 @@ Na tej podstawie można obliczyć podstawowe miary różnicy ekspresji między g
 
 ---
 
-## Dlaczego tabela ma aż 100000 wierszy?
-
-Tabela została przygotowana celowo jako duży zbiór danych, aby:
-
-- przyzwyczaić studentów do pracy z większymi tabelami,
-- umożliwić zróżnicowanie analiz pomiędzy studentami,
-- pokazać, że w bioinformatyce często nie analizuje się całego pliku naraz, lecz najpierw wybiera odpowiedni fragment danych.
-
-### Zróżnicowanie między studentami
-
 Każdy student powinien **zaraz po wczytaniu tabeli** wybrać do analizy **inną liczbę wierszy**, zależnie od swojego numeru indeksu.
 
-Liczbę analizowanych wierszy należy ustalić według zasad podanych przez prowadzącego.  
+Aby uzyskać wynik powtarzalny, ale różny dla każdego studenta, należy użyć własnego numeru indeksu jako ziarna losowości (`set.seed()`), a następnie wylosować liczbę wierszy z zakresu od **30000 do 60000**.
+
 Dzięki temu:
+- każdy student analizuje inny podzbiór danych,
+- liczba analizowanych wierszy jest duża,
+- wynik jest powtarzalny i możliwy do odtworzenia.
 
-- każdy student będzie pracował na nieco innym podzbiorze danych,
-- wyniki będą zróżnicowane,
-- łatwiej będzie sprawdzić samodzielność wykonania zadania.
-
-Po wybraniu odpowiedniego fragmentu tabeli dopiero na nim należy wykonywać dalsze obliczenia.
+W dalszej analizie należy używać tylko tak wybranego fragmentu tabeli.
 
 ---
 
