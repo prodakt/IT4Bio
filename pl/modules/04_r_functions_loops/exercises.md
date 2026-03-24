@@ -1,10 +1,342 @@
-# Część treningowa
-## Funkcje
+# Część treningowa — funkcje i pętle warunkowe
+
+W tym module przechodzimy z poziomu „używania gotowych funkcji” do poziomu **tworzenia własnych narzędzi analitycznych**.
+
+Do tej pory korzystałeś m.in. z:
+- `mean()`
+- `plot()`
+- `summary()`
+
+Teraz nauczysz się:
+- pisać **własne funkcje**,
+- przekazywać do nich argumenty,
+- sterować działaniem programu za pomocą **instrukcji warunkowych**.
 
 ---
-## pętle warunkowe
 
-## podumowanie i propozycje ćwiczeń
+# Funkcje
+
+## Co to jest funkcja?
+
+Funkcja to fragment kodu, który:
+
+- wykonuje określone zadanie,
+- może przyjmować dane wejściowe (argumenty),
+- może zwracać wynik.
+
+Dzięki funkcjom:
+- unikamy powtarzania kodu,
+- upraszczamy analizę,
+- budujemy własne narzędzia bioinformatyczne.
+
+---
+
+## Składnia funkcji w R
+
+Ogólna postać funkcji:
+
+```r
+nazwa_funkcji <- function(argument1, argument2, ...) {
+  
+  # ciało funkcji (co ma zrobić)
+  
+  return(wynik)
+}
+```
+
+---
+
+## Najprostsza funkcja (bez argumentów)
+
+```r
+hello <- function() {
+  print("Hello world!")
+}
+```
+
+Wywołanie:
+
+```r
+hello()
+```
+
+---
+
+## Funkcja z argumentem
+
+```r
+hello_name <- function(name) {
+  print(paste("Hello", name))
+}
+```
+
+Wywołanie:
+
+```r
+hello_name("Jan")
+```
+
+---
+
+## Funkcja zwracająca wynik
+
+```r
+add_numbers <- function(a, b) {
+  wynik <- a + b
+  return(wynik)
+}
+```
+
+Wywołanie:
+
+```r
+add_numbers(5, 3)
+```
+
+---
+
+## Ta sama funkcja — wersja uproszczona
+
+```r
+add_numbers <- function(a, b) {
+  a + b
+}
+```
+
+W R ostatnia linia funkcji jest automatycznie zwracana.
+
+---
+
+## Argumenty funkcji — ważne informacje
+
+Argumenty mogą:
+
+- mieć wartości domyślne:
+
+```r
+power <- function(x, p = 2) {
+  x^p
+}
+```
+
+- być opcjonalne,
+- być różnego typu (liczby, tekst, wektory, data.frame).
+
+---
+
+## Ćwiczenia — funkcje (do wykonania samodzielnie)
+
+Wykonaj poniższe zadania:
+
+### 1. Napisz funkcję, która:
+
+- przyjmuje wektor liczbowy,
+- zwraca:
+  - średnią,
+  - minimum,
+  - maksimum.
+
+---
+
+### 2. Napisz funkcję, która:
+
+- przyjmuje tabelę danych,
+- wyświetla:
+  - `head()`
+  - `tail()`
+
+---
+
+### 3. Napisz funkcję, która:
+
+- przyjmuje wektor,
+- zwraca jego logarytm (`log()` lub `log2()`),
+- pozwala ustawić podstawę logarytmu jako argument.
+
+---
+
+### 4. Napisz funkcję, która:
+
+- przyjmuje tabelę `TabRozklady` lub `TabGeny`,
+- oblicza średnią dla wybranej kolumny (podanej jako argument).
+
+---
+
+# Pętle i instrukcje warunkowe
+
+## Co to jest instrukcja warunkowa?
+
+Instrukcja warunkowa pozwala:
+
+- wykonać kod tylko wtedy, gdy spełniony jest warunek,
+- sterować przebiegiem programu.
+
+---
+
+## Instrukcja `if`
+
+```r
+x <- 10
+
+if (x > 5) {
+  print("x jest większe niż 5")
+}
+```
+
+---
+
+## Instrukcja `if ... else`
+
+```r
+x <- 3
+
+if (x > 5) {
+  print("duże")
+} else {
+  print("małe")
+}
+```
+
+---
+
+## Instrukcja `if ... else if ... else`
+
+```r
+x <- 7
+
+if (x < 5) {
+  print("małe")
+} else if (x < 10) {
+  print("średnie")
+} else {
+  print("duże")
+}
+```
+
+---
+
+## Pętla `for`
+
+Pętla pozwala wykonać operację wiele razy.
+
+```r
+for (i in 1:5) {
+  print(i)
+}
+```
+
+---
+
+## Połączenie pętli i warunków
+
+```r
+wektor <- c(1, 5, 10, 20)
+
+for (i in wektor) {
+  if (i < 10) {
+    print("małe")
+  } else {
+    print("duże")
+  }
+}
+```
+
+---
+
+# Ćwiczenia — pętle i warunki (do wykonania samodzielnie)
+
+## 1. Klasyfikacja wartości (if)
+
+Napisz kod, który:
+
+- sprawdza jedną wartość liczbową,
+- wypisuje:
+  - `"low"` jeśli < 5
+  - `"medium"` jeśli 5–10
+  - `"high"` jeśli > 10
+
+---
+
+## 2. Klasyfikacja wektora (for + if)
+
+Napisz pętlę, która:
+
+- przechodzi przez wektor liczb,
+- przypisuje każdej wartości kategorię:
+  - `"low"`
+  - `"medium"`
+  - `"high"`
+
+---
+
+## 3. Zastosowanie do tabeli (ważne!)
+
+Wybierz jedną tabelę:
+
+- `TabRozklady`
+- `TabGeny`
+- `iris`
+
+Następnie:
+
+- napisz pętlę `for`,
+- przejdź przez wszystkie wiersze,
+- na podstawie jednej kolumny przypisz kategorię,
+- zapisz wynik do nowej kolumny.
+
+---
+
+## 4. Wersja funkcji
+
+Przepisz powyższe zadanie do postaci funkcji:
+
+- funkcja przyjmuje tabelę,
+- funkcja zwraca tabelę z nową kolumną.
+
+---
+
+# Podsumowanie i propozycje ćwiczeń
+
+Po wykonaniu tej części student powinien:
+
+- rozumieć czym jest funkcja i jak ją definiować,
+- potrafić przekazywać argumenty do funkcji,
+- rozumieć działanie `if`, `if else`,
+- umieć używać pętli `for`,
+- łączyć funkcje, pętle i warunki w jednym zadaniu.
+
+---
+
+## Zadanie końcowe (mini)
+
+Na koniec wykonaj jedno z poniższych:
+
+### Wariant A (TabRozklady)
+
+- sklasyfikuj wartości `rnorm`:
+  - `"low"`, `"medium"`, `"high"`
+- zapisz wynik w nowej kolumnie
+
+---
+
+### Wariant B (TabGeny)
+
+- sklasyfikuj geny według długości:
+  - `"short"`, `"medium"`, `"long"`
+- zapisz wynik w nowej kolumnie
+
+---
+
+### Wariant C (iris)
+
+- sklasyfikuj próbki według długości płatków (`Petal.Length`)
+
+---
+
+💡 Wskazówka:  
+Najpierw zrób to „na piechotę”, a potem przepisz do funkcji.
+
+To dokładnie ten sposób pracy, który wykorzystuje się w realnych analizach bioinformatycznych.
 
 
 ---
