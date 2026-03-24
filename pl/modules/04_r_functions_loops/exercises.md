@@ -485,7 +485,7 @@ W skrypcie powinny znaleźć się:
 
 ## Zadanie 2 — uproszczona analiza różnic ekspresji
 
-W tym zadaniu student pracuje na przygotowanej wcześniej tabeli ekspresji genów, która została udostępniona w repozytorium kursu (katalog `data` plik `expression_matrix.tab`).
+W tym zadaniu student pracuje na przygotowanej wcześniej tabeli ekspresji genów, która została udostępniona w repozytorium kursu (katalog `data` plik `counts_matrix.tab`).
 
 ### Ważna informacja
 
@@ -506,7 +506,7 @@ To ćwiczenie ma pomóc zrozumieć logikę analizy danych ekspresyjnych, zanim p
 
 ## Tabela wejściowa — opis danych
 
-Student otrzymuje tabelę ekspresji o dużym rozmiarze, zawierającą:
+Student otrzymuje tabelę ekspresji o dużym rozmiarze (katalog `data` plik `counts_matrix.tab`), zawierającą:
 
 - **100000 wierszy** — każdy wiersz odpowiada jednemu genowi,
 - kolumnę identyfikatora genu,
