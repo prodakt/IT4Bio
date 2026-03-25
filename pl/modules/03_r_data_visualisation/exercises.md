@@ -509,7 +509,7 @@ W tej części należy przećwiczyć:
 
 ---
 
-## Zadania obowiązkowe do samodzielnego przećwiczenia
+## Propozycja Zadań do samodzielnego przećwiczenia
 
 Wybierz **jedną tabelę główną** spośród:
 
@@ -783,7 +783,7 @@ geom_point()
 geom_bar()
 ```
 
-## Zadanie obowiązkowe zamykające tę część modułu 
+## Zadanie zamykające tę część modułu 
 
 Na wybranej tabeli (`TabGeny`, `TabRozklady`, `TabBLAST`, `TabGTF` lub `iris`) student musi wykonać i zapisać w skrypcie:
 1. co najmniej **5 różnych wariantów wykresu `plot()`**,  
