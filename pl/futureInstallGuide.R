@@ -1,0 +1,1 @@
+BiocManager::install(prodakt/IT4Bio)
